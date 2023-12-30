@@ -1,0 +1,154 @@
+body {
+  font-family: Poppins;
+  background-color: hsl(0, 0%, 98%);
+  height: 120vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  flex-direction: column;
+  padding: 0 50px;
+}
+main .titiles {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+@media (min-width: 64em) {
+  main .titiles {
+    padding: 0;
+  }
+}
+main .titiles h2 {
+  font-weight: 300;
+  color: hsl(234, 12%, 34%);
+  font-size: clamp(20px, 4vw, 40px);
+  width: max(245px, 100%);
+}
+main .titiles h1 {
+  font-size: 25px;
+  font-weight: 600;
+  color: hsl(234, 12%, 34%);
+  margin-bottom: 20px;
+  font-size: clamp(20px, 4vw, 40px);
+  width: max(245px, 100%);
+}
+main .titiles p {
+  width: min(535px, 100%);
+  font-size: clamp(0.85rem, 2vw, 0.9375rem);
+  color: hsl(229, 6%, 66%);
+  align-self: center;
+}
+main .cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: clamp(1rem, 2vw, 3rem);
+}
+@media (min-width: 64em) {
+  main .cardsWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "one two four" ".three.";
+    margin-top: 60px;
+  }
+}
+main .cardsWrapper .card {
+  width: 330px;
+  height: 230px;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 2px 1px 16px -2px hsl(229, 6%, 66%);
+  position: relative;
+}
+main .cardsWrapper .card > * {
+  padding-left: 20px;
+}
+main .cardsWrapper .card h4 {
+  margin: 20px 0;
+  color: hsl(234, 12%, 34%);
+}
+main .cardsWrapper .card p {
+  color: hsl(229, 6%, 66%);
+  font-size: clamp(0.85rem, 2vw, 0.9375rem);
+}
+main .cardsWrapper .card img {
+  width: 50px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+main .cardsWrapper > :first-child {
+  grid-area: one;
+  position: relative;
+}
+@media (min-width: 64em) {
+  main .cardsWrapper > :first-child {
+    top: 90px;
+  }
+}
+main .cardsWrapper > :first-child::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(180, 62%, 55%);
+}
+main .cardsWrapper > :nth-child(2) {
+  grid-area: two;
+  position: relative;
+}
+main .cardsWrapper > :nth-child(2)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(0, 78%, 62%);
+}
+main .cardsWrapper > :nth-child(3) {
+  grid-area: three;
+  position: relative;
+}
+main .cardsWrapper > :nth-child(3)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(34, 97%, 64%);
+}
+main .cardsWrapper > :last-child {
+  grid-area: four;
+  position: relative;
+}
+@media (min-width: 64em) {
+  main .cardsWrapper > :last-child {
+    top: 90px;
+  }
+}
+main .cardsWrapper > :last-child::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(212, 86%, 64%);
+}
+
+footer {
+  margin-top: 20px;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228, 45%, 44%);
+}/*# sourceMappingURL=main.css.map */

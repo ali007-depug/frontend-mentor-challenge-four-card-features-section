@@ -1,0 +1,163 @@
+//mixin
+@use "_mixin.scss";
+//color
+$p-red: hsl(0, 78%, 62%);
+$p-cyan: hsl(180, 62%, 55%);
+$p-orange: hsl(34, 97%, 64%);
+$p-blue: hsl(212, 86%, 64%);
+$n-very-dark-blue: hsl(234, 12%, 34%);
+$n-grayish-blue: hsl(229, 6%, 66%);
+$n-very-light-gray: hsl(0, 0%, 98%);
+
+body {
+  font-family: Poppins;
+  background-color: $n-very-light-gray;
+}
+// reset all elements
+* {
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  flex-direction: column;
+  padding: 0 50px;
+  //Style titles
+  .titiles {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    @include mixin.breakpoints(lg) {
+      padding: 0;
+    }
+    h2 {
+      font-weight: 300;
+      color: $n-very-dark-blue;
+      font-size: clamp(20px, 4vw, 40px);
+      width: max(245px, 100%);
+    }
+    h1 {
+      font-size: 25px;
+      font-weight: 600;
+      color: $n-very-dark-blue;
+      margin-bottom: 20px;
+      font-size: clamp(20px, 4vw, 40px);
+      width: max(245px, 100%);
+    }
+    p {
+      width: min(535px, 100%);
+      font-size: clamp(0.85rem, 2vw, 00.9375rem);
+      color: $n-grayish-blue;
+      align-self: center;
+    }
+  }
+  //End styling heading
+
+  // Styling cards
+  .cardsWrapper {
+    @include mixin.breakpoints(lg) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "one two four"
+        ".three.";
+      margin-top: 60px;
+    }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: clamp(1rem, 2vw, 3rem);
+    .card {
+      width: 330px;
+      height: 230px;
+      background-color: $n-very-light-gray;
+      box-shadow: 2px 1px 16px -2px $n-grayish-blue;
+      position: relative;
+      & > * {
+        padding-left: 20px;
+      }
+      h4 {
+        margin: 20px 0;
+        color: $n-very-dark-blue;
+      }
+      p {
+        color: $n-grayish-blue;
+        font-size: clamp(0.85rem, 2vw, 0.9375rem);
+      }
+      img {
+        width: 50px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+      }
+    }
+    & > :first-child {
+      grid-area: one;
+      position: relative;
+      @include mixin.breakpoints(lg) {
+        top: 90px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $p-cyan;
+      }
+    }
+
+    & > :nth-child(2) {
+      grid-area: two;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $p-red;
+      }
+    }
+    & > :nth-child(3) {
+      grid-area: three;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $p-orange;
+      }
+    }
+    & > :last-child {
+      grid-area: four;
+      position: relative;
+      @include mixin.breakpoints(lg) {
+        top: 90px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $p-blue;
+      }
+    }
+  }
+  // End Styling cards
+}
+footer {
+  margin-top: 20px;
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    a {
+     color: hsl(228, 45%, 44%);
+   }
+  }
+}
